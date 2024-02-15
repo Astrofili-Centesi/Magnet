@@ -45,7 +45,7 @@ jobs:
             python scripts/convert.py /tmp/48h.csv /tmp/48h.json
       - uses: actions/checkout@v3
         with:
-         ref: gh-pages
+         ref: main
       - name: update file
         run: |
             mkdir data || true
