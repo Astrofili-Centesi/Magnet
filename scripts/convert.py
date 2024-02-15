@@ -7,4 +7,4 @@ d=d.pivot(index="_time",columns="_field",values="_value").reset_index()
 d=d.set_index("_time")
 d.index.name="time"
 print(d)
-d.to_json("sys.argv[2]")
+d.to_json(sys.argv[2])
