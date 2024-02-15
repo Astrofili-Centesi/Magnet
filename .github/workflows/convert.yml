@@ -41,7 +41,7 @@ jobs:
             if [ -f scripts/requirements.txt ]; then pip install -r scripts/requirements.txt; fi
       - name: execute script
         run: |
-            cp 48h.csv /tmp/
+            cp data/48h.csv /tmp/
             python scripts/convert.py /tmp/48h.csv /tmp/48h.json
       - uses: actions/checkout@v3
         with:
@@ -49,7 +49,7 @@ jobs:
       - name: update file
         run: |
             mkdir data || true
-            cp /tmp/48h.json data
+            cp /tmp/48h.json data/
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
